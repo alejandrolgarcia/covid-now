@@ -1,53 +1,51 @@
 <!-- Page Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 text-center mt-3">
-            <form (ngSubmit)="searchPais()" #f="ngForm">
-                <div class="input-group mb-3 animated fadeIn">
-                    <input type="text" name="pais" class="form-control" [(ngModel)]="pais" placeholder="Ingrese su país" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-secondary" type="submit" id="button-addon2">Search</button>
-                    </div>
+<div class="row">
+    <div class="col-lg-12 text-center mt-3">
+        <form (ngSubmit)="searchPais()" #f="ngForm">
+            <div class="input-group mb-3 animated fadeIn">
+                <input type="text" name="pais" class="form-control" [(ngModel)]="pais" placeholder="Ingrese su país" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" type="submit" id="button-addon2">Search</button>
                 </div>
-            </form>
+            </div>
+        </form>
 
-            <h4 class="text-center "> <img src="{{ countries.countryInfo.flag }}" width="30" height="20"> {{ countries.country }}</h4>
+        <h4 class="text-center "> <img src="{{ countries.countryInfo.flag }}" width="30" height="20"> {{ countries.country }}</h4>
 
-            <table class="table table-striped table-dark animated fadeIn">
-                <tbody>
-                    <tr>
-                        <td>Total Casos</td>
-                        <td>{{ countries.cases | number }}</td>
-                    </tr>
-                    <tr>
-                        <td>Casos Diarios</td>
-                        <td>{{ countries.todayCases | number }}</td>
-                    </tr>
-                    <tr>
-                        <td>Total Muertos</td>
-                        <td>{{ countries.deaths | number }}</td>
-                    </tr>
-                    <tr>
-                        <td>Muertos Hoy</td>
-                        <td>{{ countries.todayDeaths | number }}</td>
-                    </tr>
-                    <tr>
-                        <td>Recuperados</td>
-                        <td>{{ countries.recovered | number }}</td>
-                    </tr>
-                    <tr>
-                        <td>Casos Activos</td>
-                        <td>{{ countries.active | number }}</td>
-                    </tr>
-                    <tr>
-                        <td>Casos Críticos</td>
-                        <td>{{ countries.critical | number }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <table class="table table-striped table-dark animated fadeIn">
+            <tbody>
+                <tr>
+                    <td>Total Casos</td>
+                    <td>{{ countries.cases | number }}</td>
+                </tr>
+                <tr>
+                    <td>Casos Diarios</td>
+                    <td>{{ countries.todayCases | number }}</td>
+                </tr>
+                <tr>
+                    <td>Total Muertos</td>
+                    <td>{{ countries.deaths | number }}</td>
+                </tr>
+                <tr>
+                    <td>Muertos Hoy</td>
+                    <td>{{ countries.todayDeaths | number }}</td>
+                </tr>
+                <tr>
+                    <td>Recuperados</td>
+                    <td>{{ countries.recovered | number }}</td>
+                </tr>
+                <tr>
+                    <td>Casos Activos</td>
+                    <td>{{ countries.active | number }}</td>
+                </tr>
+                <tr>
+                    <td>Casos Críticos</td>
+                    <td>{{ countries.critical | number }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-            <h6 class="text-center ">Actualizado al {{ countries.updated | date: 'dd/MM/yyyy'}} </h6>
+        <h6 class="text-center ">Actualizado al {{ countries.updated | date: 'dd/MM/yyyy'}} </h6>
 
-        </div>
     </div>
 </div>
