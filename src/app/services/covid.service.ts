@@ -13,11 +13,11 @@ export class CovidService {
 
   globalTotals() {
 
-    return this.http.get('https://corona.lmao.ninja/all');
+    return this.http.get('https://corona.lmao.ninja/v2/all');
   }
 
   getAllCountries() {
-    return this.http.get('https://corona.lmao.ninja/countries?sort=cases')
+    return this.http.get('https://corona.lmao.ninja/v2/countries?yesterday=false&sort=cases')
       .pipe(
         map( (resp: any[]) => {
           return resp.map( countries => {
@@ -38,6 +38,6 @@ export class CovidService {
   }
 
   getPais( pais: string) {
-    return this.http.get(`https://corona.lmao.ninja/countries/${pais}`);
+    return this.http.get(`https://corona.lmao.ninja/v2/countries/${pais}?yesterday=false&strict=false`);
   }
 }
